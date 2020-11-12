@@ -1,0 +1,16 @@
+truncate table friends, subscriptions, blocks, useremails;
+
+alter sequence useremails_id_seq RESTART WITH 1;
+
+--insert UserEmails
+insert into useremails(email) values ('abc@xyz.com');
+insert into useremails(email) values ('xyz@abc.com');
+
+--insert FriendConnection
+insert into friends(firstid, secondid) VALUES (1, 2);
+
+--insert Blocks
+insert into blocks(requestorid, targetid) VALUES (1, 2);
+
+--insert Subscription
+insert into subscriptions(requestorid, targetid) values (2, 1);
